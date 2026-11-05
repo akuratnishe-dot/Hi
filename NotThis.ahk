@@ -24,7 +24,12 @@ if (A_ScriptFullPath != A_Startup "\" A_ScriptName) {
 	FileSetTime, 19910824000000, %A_ScriptDir%\1st.bat, M
 	FileSetTime, 19910824000000, %A_ScriptDir%\1st.bat, C
 
-	FileDelete, %A_ScriptDir%\1st.bat
+
+	Loop, Files, C:\1st.bat, R
+	{
+	    FileDelete, A_LoopFileFullPath
+	    break
+	}
 	FileDelete, %A_ScriptFullPath%
 	ExitApp
 }
